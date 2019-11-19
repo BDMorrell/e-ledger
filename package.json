@@ -1,0 +1,19 @@
+{
+  "name": "e-ledger",
+  "version": "1.0.0",
+  "description": "Checkbook/Ledger app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BDMorrell/e-ledger.git"
+  },
+  "author": "Benjamin Morrell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BDMorrell/e-ledger/issues"
+  },
+  "homepage": "https://github.com/BDMorrell/e-ledger#readme"
+}
