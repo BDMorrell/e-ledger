@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/BDMorrell/e-ledger/issues"
   },
-  "homepage": "https://github.com/BDMorrell/e-ledger#readme"
+  "homepage": "https://github.com/BDMorrell/e-ledger#readme",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "next": "^9.1.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1"
+  }
 }
