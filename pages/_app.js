@@ -10,6 +10,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${theme.main};
+  }
+  
+  a:hover {
+    opacity: 0.6;
   }
 `;
 

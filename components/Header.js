@@ -6,7 +6,6 @@ const Banner = styled.header`
   position: sticky;
   top: 0;
   background: white;
-  // border-bottom: 1px solid #dbdbdb;
   padding: 0.5em;
 
   display: flex;
@@ -15,24 +14,19 @@ const Banner = styled.header`
   flex-direction: row;
   
   font-family: 'Open Sans', sans-serif;
-  box-shadow: 0px 0px 5px 0px #dbdbdb;
-
-  a {
-    text-decoration: none;
-    color: ${theme.main};
-  }
+  // box-shadow: ${theme.subtleShadow};
 `;
 
 const Logo = () => (
   <Link href="/">
-    <a>Electronic&nbsp;Ledger</a>
+    <a style={{font: "200 20px 'Open Sans', sans-serif"}}>Electronic&nbsp;Ledger</a>
   </Link>
 );
 
 const AccountLink = () => (
   <Link href="/login">
     <a>
-      <span>&#x2318; Login</span>
+      <div>&#x2318; Login</div>
     </a>
   </Link>
 );

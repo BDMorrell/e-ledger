@@ -7,4 +7,5 @@ export default function LoginPage() {
       <p>This doesn't exist yet.</p>
     </>
   );
+  
 }
