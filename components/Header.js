@@ -2,11 +2,13 @@ import Link from "next/link";
 import styled from "styled-components";
 import { theme } from "./constants";
 
-const Banner = styled.header`
+const Banner = styled.nav`
   position: sticky;
   top: 0;
   background: white;
-  padding: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  height: ${theme.headerHeight};
 
   display: flex;
   align-items: center;
@@ -31,11 +33,11 @@ const AccountLink = () => (
   </Link>
 );
 
-export default function Header() {
+export default function Header(props) {
   return (
-    <Banner>
-      <Logo />
-      <AccountLink />
+    <Banner style={props.style}>
+        <Logo />
+        <AccountLink />
     </Banner>
   );
 }
