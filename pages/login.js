@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Header from "../components/Header";
 import { Primary, Secondary, ButtonRow } from "../components/Buttons";
-import { theme } from "../components/constants";
+import { theme } from "../static/constants";
 
 const LoginFormBox = styled.form`
   display: flex;

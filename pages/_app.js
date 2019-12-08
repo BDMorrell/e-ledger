@@ -2,7 +2,7 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { theme } from "../components/constants";
+import { theme } from "../static/constants";
 
 const GlobalStyle = createGlobalStyle`
   html, body, _next {

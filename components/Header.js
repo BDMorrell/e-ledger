@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { theme } from "./constants";
+import { theme } from "../static/constants";
 
 const Banner = styled.nav`
   position: sticky;
