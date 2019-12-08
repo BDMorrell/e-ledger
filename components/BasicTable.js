@@ -38,7 +38,7 @@ export const EditableTableFormat = styled.table`
     }
   }
   caption {
-    border-top: 100vh solid transparent;
+    border-top: 80vh solid transparent;
     caption-side: bottom;
     color: transparent;
     user-select: none;

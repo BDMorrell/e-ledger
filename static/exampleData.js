@@ -59,7 +59,17 @@ export const exampleAccountData = [
       },
       {
         name: "Account 3",
-        subAccounts: [],
+        subAccounts: [
+
+          {
+            name: "Sub account 3.1",
+            subAccounts: [],
+          },
+          {
+            name: "Sub account 3.2",
+            subAccounts: [],
+          },
+        ],
       },
       {
         name: "Account 4",
