@@ -87,10 +87,10 @@ class AccountDisplay extends React.Component {
           <Checkbox type="checkbox" style={{visibility: "hidden"}} />{/* This is for alignment only */}
           {this.props.account.name}
         </li>
-      )
+      );
     }
   }
-};
+}
 
 export default function AccountPane(props) {
   return (
