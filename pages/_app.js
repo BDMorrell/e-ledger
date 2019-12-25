@@ -1,7 +1,7 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { theme } from "../static/constants";
 
 const GlobalStyle = createGlobalStyle`
@@ -16,10 +16,9 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${theme.main};
-  }
-  
-  a:hover {
-    opacity: 0.6;
+    :hover {
+      opacity: 0.6;
+    }
   }
 `;
 
@@ -36,9 +35,7 @@ class ThisApp extends App {
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i&display=swap" rel="stylesheet" />
         </Head>
         <GlobalStyle />
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <Component {...pageProps} />
       </>
     );
   }
