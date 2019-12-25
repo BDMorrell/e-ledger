@@ -32,7 +32,8 @@ class ThisApp extends App {
         <Head>
           <title>Electronic Ledger</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" key="viewport" />
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i&display=swap" rel="stylesheet"></link>
+          <link rel="icon" type="image/png" href="/favicon.png" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i&display=swap" rel="stylesheet" />
         </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>

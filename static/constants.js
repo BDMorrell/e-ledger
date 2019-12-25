@@ -1,11 +1,12 @@
-const shadowColor = `rgba(0, 0, 0, 0.15)`;
+const shadowColor = `rgba(0, 0, 0, 0.10)`;
 const subtleShadow = `0px 0px 5px 0px ${shadowColor}`;
 
 export const theme = {
-  main: '#780596',
+  main: '#057f32',
   onMain: "#ffffff",
   borderWidth: `0.1em`,
   shadowColor,
+  lightColor: "#e6e6e6", // the solid version of shadowColor on white
   subtleShadow,
   friendlyPadding: `1em`,
   headerHeight: `2em`,

@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import ReadWidth from "../components/ReadWidth";
 import Hero from "../components/Hero";
 import { theme } from "../static/constants";
-import Link from "next/link";
 
 const SalesPitch = props => (
   <>
@@ -16,7 +15,11 @@ export default function Index() {
   return (
     <>
       <Header />
-      <Hero>Electronic Ledger</Hero>
+      <Hero>
+        <h1>
+          Electronic Ledger
+        </h1>
+      </Hero>
       <ReadWidth>
         <p>
           Welcome to the Electronic Ledger! It's still currently in development,
@@ -51,11 +54,6 @@ export default function Index() {
           </ul>
         </blockquote>
         <p>This page may eventually get a lot of sales pitches. Maybe like:</p>
-        <SalesPitch title="100% Secure">
-          You don't have to worry about loosing things, because we don't store
-          anything for you to loose! We won't hold any information you try to
-          give us. That's why we're seen as the #1…[sales pitch]…[pitch]…[ad]…
-          </SalesPitch>
         <SalesPitch title="Open Source">
           From the beginning, this project was made to be open source!
           </SalesPitch>

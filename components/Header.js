@@ -21,7 +21,7 @@ const Banner = styled.nav`
 
 const Logo = () => (
   <Link href="/">
-    <a style={{font: "200 20px 'Open Sans', sans-serif"}}>Electronic&nbsp;Ledger</a>
+    <a style={{ font: "200 20px 'Open Sans', sans-serif" }}>Electronic&nbsp;Ledger</a>
   </Link>
 );
 
@@ -36,8 +36,13 @@ const AccountLink = () => (
 export default function Header(props) {
   return (
     <Banner style={props.style}>
-        <Logo />
-        <AccountLink />
+      <noscript>
+        <p>
+          <strong style={{color: "darkred"}}>For the main app on this website to work, you need to enable JavaScript.</strong>
+        </p>
+      </noscript>
+      <Logo />
+      <AccountLink />
     </Banner>
   );
 }

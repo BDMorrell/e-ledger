@@ -8,13 +8,16 @@ const HeroBackground = styled.div`
   color: ${theme.onMain};
   padding-top: 1em;
   padding-bottom: 1em;
+  a {
+    color: ${theme.onMain};
+  }
 `;
 
 function Hero(props) {
   return (
     <HeroBackground>
       <ReadWidth>
-        <h1>{props.children}</h1>
+        {props.children}
       </ReadWidth>
     </HeroBackground>
   );
