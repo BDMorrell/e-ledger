@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { theme, icons } from "../static/constants";
+import { theme, icons, svgUri } from "../static/constants";
 
 const AccountArea = styled.div`
   grid-area: picker;
@@ -27,11 +27,11 @@ const Checkbox = styled.input` // TODO: mess with this
   outline: none;
 
   // icons
-  background-image: url("data:image/svg+xml;utf8,${encodeURI(icons.arrowRight)}");
+  background-image: ${svgUri(icons.arrowRight)};
   background-size: 1.5em 1.5em;
   // transition: transform 0.1s;
   &:checked {
-    background-image: url("data:image/svg+xml;utf8,${encodeURI(icons.arrowDown)}");
+    background-image: ${svgUri(icons.arrowDown)};
     // transform: rotate(90deg);
   }
 

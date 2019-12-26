@@ -22,7 +22,7 @@ export const exampleTableBodyObject = [
     Check: "",
     Date: "1 Jan 1970",
     Description: "Money from a golden gift card",
-    Done: false,
+    Done: true,
     Debit: 0,
     Credit: 25000.00,
   },
