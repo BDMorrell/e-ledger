@@ -13,7 +13,11 @@ export const theme = {
 };
 
 function wrapSvgLine(path) {
-  return `<svg width="1em" height="1em" preserveAspectRatio="xMinYMid" viewBox="0,0,64,64" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path fill-opacity="0" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="${path}"/></svg>`;
+  return `<svg width="1em" height="1em" preserveAspectRatio="xMidYMid" viewBox="0,0,64,64" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path fill-opacity="0" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="${path}"/></svg>`;
+}
+
+export function svgUri(svg) {
+  return `url("data:image/svg+xml;utf8,${encodeURI(svg)}")`
 }
 
 export const icons = {
