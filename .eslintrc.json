@@ -10,7 +10,8 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "React": "writable"
     },
     "parserOptions": {
         "ecmaFeatures": {
@@ -34,13 +35,20 @@
         ],
         "quotes": [
             "warn",
-            "double"
+            "double" // most of the time
         ],
         "semi": [
             "error",
             "always"
         ],
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "no-unused-vars": "warn",
+        // I will need to remove these comments if I want to move this to package.json
+        "react/react-in-jsx-scope": "off", // next.js takes care of this
+        "react/no-unescaped-entities": "off", // I still have text in jsx. This isn't a concern right now.
+        "react/prop-types": "off" // how can I deal with prop validation cleanly?
     }
 }

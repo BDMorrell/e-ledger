@@ -56,14 +56,14 @@ export default function Index() {
         <p>This page may eventually get a lot of sales pitches. Maybe like:</p>
         <SalesPitch title="Open Source">
           From the beginning, this project was made to be open source!
-          </SalesPitch>
+        </SalesPitch>
         <SalesPitch title="GMO Free">
           We won't let even a single speck of GMO get on this page.
-          </SalesPitch>
+        </SalesPitch>
         <SalesPitch title="Long frontpage">
           The front page so far has a lot of long-winded content that wasn't
           very carefully thought out.
-          </SalesPitch>
+        </SalesPitch>
         <hr />
         <p>
           It's like this page was made specifically for testing how the
