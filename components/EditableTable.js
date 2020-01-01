@@ -1,8 +1,8 @@
 import React from "react";
 import { useTable } from "react-table";
-import CheckbookTableColumns from "./objects/CheckbookTableColumns";
 import styled from "styled-components";
 import { theme } from "../static/constants";
+import CheckbookTableColumns from "./objects/CheckbookTableColumns";
 
 const EditableTableFormat = styled.table`
   width: 100%;
@@ -12,7 +12,7 @@ const EditableTableFormat = styled.table`
     position: sticky;
     top: 0;
     background-color: white;
-    box-shadow: 0 1px ${theme.lightColor}; // bottom border when sticked
+    box-shadow: 0 1px ${theme.lightColor}; /* bottom border when sticked */
     border-top: none;
   }
   * tr {
@@ -29,8 +29,17 @@ const EditableTableFormat = styled.table`
         border-right: none;
       }
     }
+    td[contenteditable="true"] {
+      white-space: nowrap;
+      :focus {
+        outline-color: ${theme.main};
+        br {
+          display: none;
+        }
+      }
+    }
   }
-  caption { // for screen readers only
+  caption { /* for screen readers only, and allow for scrolling past the bottom */
     border-top: 80vh solid transparent;
     caption-side: bottom;
     color: transparent;
@@ -38,19 +47,30 @@ const EditableTableFormat = styled.table`
   }
 `;
 
-function renderCellContents({ cell }) {
-  try {
-    return (cell.column.formatter(cell.value));
-  } catch (e) {
-    console.info(e); // info so it can be filtered out, because the table has a lot of cells
-    return (<span style={{ color: "red" }}>E.{e.name}</span>);
-  }
-}
+function renderCell(cell) {
+  const { column, row, value: originalValue, getCellProps, render } = cell;
 
-function renderCell(tdInfo) {
+  const [value, setValue] = React.useState(originalValue);
+
+  const onInput = e => {
+    /* Don't sanitize here unless debugging! The curser jumps unexpectedly for the user. */
+  }
+
+  const onBlur = e => {
+    const nodes = e.target.childNodes;
+    if (e.target.childNodes.length > 1 || nodes.length === 1 && nodes[0].nodeType !== 3) {
+      e.target.textContent = e.target.textContent;
+    }
+    setValue(e.target.textContent);
+  }
+
+  React.useEffect(() => {
+    setValue(originalValue);
+  }, [originalValue]);
+
   return (
-    <td {...tdInfo.getCellProps()}>
-      {tdInfo.render(renderCellContents)}
+    <td {...getCellProps()} contentEditable="true" suppressContentEditableWarning="true" onInput={onInput} onBlur={onBlur}>
+      {render(<>{value}</>)}
     </td>
   );
 }
@@ -67,27 +87,30 @@ export default function EditableTable({ contents, ...props }) {
   } = useTable({
     columns,
     data,
-  })
+  });
   return (
-    <EditableTableFormat {...getTableProps()}>
-      <caption>Ledger Information Table</caption>
-      <thead>
-        <tr>
-          {flatHeaders.map(thInfo => (<th {...thInfo.getHeaderProps()}>
-            {thInfo.render('Header')}
-          </th>))}
-        </tr>
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map(trInfo => {
-          prepareRow(trInfo);
-          return (
-            <tr {...trInfo.getRowProps()}>
-              {trInfo.cells.map(renderCell)}
-            </tr>
-          );
-        })}
-      </tbody>
-    </EditableTableFormat>
+    <>
+      <EditableTableFormat {...getTableProps()}>
+        <caption>Ledger Information Table</caption>
+        <thead>
+          <tr>
+            {flatHeaders.map(thInfo => (<th {...thInfo.getHeaderProps()}>
+              {thInfo.render('Header')}
+            </th>))}
+          </tr>
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map(trInfo => {
+            prepareRow(trInfo);
+            return (
+              <tr {...trInfo.getRowProps()}>
+                {trInfo.cells.map(renderCell)}
+              </tr>
+            );
+          })}
+        </tbody>
+      </EditableTableFormat>
+      <pre>Debugging (in EditableTable):{"\n"+JSON.stringify(data, null, 2)}</pre>
+    </>
   );
 }
