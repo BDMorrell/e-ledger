@@ -3,13 +3,8 @@ import { theme } from "../static/constants";
 
 const SideBar = styled.aside`
   grid-area: sidebar;
-  display: grid;
-  grid-template:
-    auto max-content
-    / auto;
-  grid-template-areas:
-    "picker"
-    "stats";
+  display: flex;
+  flex-direction: column;
 
   overflow-y: auto;
   overflow-x: hidden;

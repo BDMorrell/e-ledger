@@ -3,7 +3,7 @@ import React from "react";
 import { theme, icons, svgUri } from "../static/constants";
 
 const AccountArea = styled.div`
-  grid-area: picker;
+  flex-grow: 1;
   overflow: auto;
 `;
 
