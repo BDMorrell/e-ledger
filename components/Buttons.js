@@ -5,9 +5,9 @@ const buttonForm = `
   padding: ${theme.friendlyPadding};
   margin: 0.5em;
   border: ${theme.borderWidth} solid ${theme.main};
-  // border: none;
+  /* border: none; */
   font: inherit;
-  // border-radius: ${theme.friendlyPadding};
+  /* border-radius: ${theme.friendlyPadding}; */
 `;
 
 const Primary = styled.button`

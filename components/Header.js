@@ -16,7 +16,7 @@ const Banner = styled.nav`
   flex-direction: row;
   
   font-family: 'Open Sans', sans-serif;
-  // box-shadow: ${theme.subtleShadow};
+  /* box-shadow: ${theme.subtleShadow}; */
 `;
 
 const Logo = () => (

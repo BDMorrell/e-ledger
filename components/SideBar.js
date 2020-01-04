@@ -10,7 +10,7 @@ const SideBar = styled.aside`
   overflow-x: hidden;
   border-right: 1px solid ${theme.shadowColor};
   background-color: ${theme.shadowColor};
-  // box-shadow: inset ${theme.subtleShadow}
+  /* box-shadow: inset ${theme.subtleShadow} */
 `;
 export default SideBar;
 

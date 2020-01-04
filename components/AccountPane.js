@@ -9,13 +9,13 @@ const AccountArea = styled.div`
 
 const AcccountList = styled.ul`
   ${props => props.visible ? "" : "display: none;"}
-  padding-inline-start: 1em; // Edge incompatible as of writing this line
+  padding-inline-start: 1em; /* Edge incompatible as of writing this line */
   li {
     list-style: none;
   }
 `;
 
-const Checkbox = styled.input` // TODO: mess with this
+const Checkbox = styled.input` /* TODO: mess with this */
   appearance: none;
   width: 1.5em;
   height: 1.5em;
@@ -26,13 +26,13 @@ const Checkbox = styled.input` // TODO: mess with this
   border: none;
   outline: none;
 
-  // icons
+  /* icons */
   background-image: ${svgUri(icons.arrowRight)};
   background-size: 1.5em 1.5em;
   // transition: transform 0.1s;
   &:checked {
     background-image: ${svgUri(icons.arrowDown)};
-    // transform: rotate(90deg);
+    /* transform: rotate(90deg); */
   }
 
   &:hover {

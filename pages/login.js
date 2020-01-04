@@ -20,7 +20,7 @@ const MyInput = styled.input`
   padding: ${theme.friendlyPadding};
   border: 0;
   border-bottom: ${theme.borderWidth} solid ${theme.main};
-  // margin: ${theme.friendlyPadding};
+  /* margin: ${theme.friendlyPadding}; */
   font: inherit;
 `;
 
