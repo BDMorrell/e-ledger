@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../static/constants";
+import { theme } from "../lib/constants/stylingParts";
 
 const buttonForm = `
   padding: ${theme.friendlyPadding};

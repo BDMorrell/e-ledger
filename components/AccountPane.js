@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { theme, icons, svgUri } from "../static/constants";
+import { theme, icons, svgUri } from "../lib/constants/stylingParts";
 
 const AccountArea = styled.div`
   flex-grow: 1;

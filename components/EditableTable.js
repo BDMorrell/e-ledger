@@ -1,8 +1,8 @@
 import React from "react";
 import { useTable } from "react-table";
 import styled from "styled-components";
-import { theme } from "../static/constants";
-import CheckbookTableColumns from "./objects/CheckbookTableColumns";
+import { theme } from "../lib/constants/stylingParts";
+import checkbookTableColumns from "../lib/checkbookTableColumns";
 
 const EditableTableFormat = styled.table`
   width: 100%;
@@ -76,7 +76,7 @@ function renderCell(cell) {
 }
 
 export default function EditableTable({ contents, ...props }) {
-  const columns = React.useMemo(() => CheckbookTableColumns, []);
+  const columns = React.useMemo(() => checkbookTableColumns, []);
   const data = React.useMemo(() => contents, []);
   const {
     getTableProps,

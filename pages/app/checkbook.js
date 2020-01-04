@@ -1,11 +1,11 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import styled from "styled-components";
-import { theme } from "../static/constants";
-import AppGrid from "../components/AppGrid";
-import SideBar, { InformationArea } from "../components/SideBar";
-import AccountPane from "../components/AccountPane";
-import { exampleTableBodyObject, exampleAccountData } from "../static/exampleData";
-import EditableTable from "../components/EditableTable";
+import { theme } from "../../lib/constants/stylingParts";
+import AppGrid from "../../components/AppGrid";
+import SideBar, { InformationArea } from "../../components/SideBar";
+import AccountPane from "../../components/AccountPane";
+import { exampleTableBodyObject, exampleAccountData } from "../../lib/constants/exampleData";
+import EditableTable from "../../components/EditableTable";
 
 const MainGridSection = styled.div`
   overflow-y: scroll;

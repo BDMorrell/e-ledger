@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../static/constants";
+import { theme } from "../lib/constants/stylingParts";
 import ReadWidth from "./ReadWidth";
 
 const HeroBackground = styled.div`

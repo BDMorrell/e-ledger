@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Header from "../components/Header";
 import { Primary, Secondary, ButtonRow } from "../components/Buttons";
-import { theme } from "../static/constants";
+import { theme } from "../lib/constants/stylingParts";
 
 const LoginFormBox = styled.form`
   display: flex;
@@ -25,7 +25,7 @@ const MyInput = styled.input`
 `;
 
 const LoginForm = () => (
-  <LoginFormBox action="/checkbook" method="post">
+  <LoginFormBox action="/app/checkbook" method="post">
     <MyInput type="text" name="usrName" id="uname" placeholder="Username" />
     <MyInput type="password" name="password" id="pass" placeholder="Password" />
     <ButtonRow>

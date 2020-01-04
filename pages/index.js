@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import ReadWidth from "../components/ReadWidth";
 import Hero from "../components/Hero";
-import { theme } from "../static/constants";
+import { theme } from "../lib/constants/stylingParts";
 
 const SalesPitch = props => (
   <>
