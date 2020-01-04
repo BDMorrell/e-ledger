@@ -13,7 +13,7 @@ const LoginFormBox = styled.form`
   align-content: space-between;
   max-width: 20em;
   flex-direction: column;
-  padding 1em;
+  padding: 1em;
 `;
 
 const MyInput = styled.input`

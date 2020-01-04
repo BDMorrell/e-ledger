@@ -59,7 +59,7 @@ function renderCell(cell) {
   const onBlur = e => {
     const nodes = e.target.childNodes;
     if (e.target.childNodes.length > 1 || nodes.length === 1 && nodes[0].nodeType !== 3) {
-      e.target.textContent = e.target.textContent;
+      e.target.textContent = e.target.textContent.normalize().trim();
     }
     setValue(e.target.textContent);
   }
