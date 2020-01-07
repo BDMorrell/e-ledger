@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../lib/constants/stylingParts";
+import { generateAccountsDOM } from "./AccountSelectors";
 
 const SideBar = styled.aside`
   grid-area: sidebar;
@@ -15,7 +16,19 @@ const SideBar = styled.aside`
 export default SideBar;
 
 export const InformationArea = styled.div`
-  grid-area: stats;
   text-align: center;
   border-top: 1px solid ${theme.shadowColor};
 `;
+
+const AccountArea = styled.div`
+  flex-grow: 1;
+  overflow: auto;
+`;
+
+export function AccountPane({ accounts, ...props }) {
+  return (
+    <AccountArea>
+      {generateAccountsDOM(accounts)}
+    </AccountArea>
+  );
+}

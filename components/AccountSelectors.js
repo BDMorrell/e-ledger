@@ -2,11 +2,6 @@ import styled from "styled-components";
 import React from "react";
 import { theme, icons, svgUri } from "../lib/constants/stylingParts";
 
-const AccountArea = styled.div`
-  flex-grow: 1;
-  overflow: auto;
-`;
-
 const AcccountList = styled.ul`
   ${props => props.visible ? "" : "display: none;"}
   padding-inline-start: 1em; /* Edge incompatible as of writing this line */
@@ -15,7 +10,7 @@ const AcccountList = styled.ul`
   }
 `;
 
-const Checkbox = styled.input` /* TODO: mess with this */
+const TreeExpandHandle = styled.input` /* TODO: mess with this */
   appearance: none;
   width: 1.5em;
   height: 1.5em;
@@ -41,11 +36,11 @@ const Checkbox = styled.input` /* TODO: mess with this */
   }
 `;
 
-function generateAccountsDOM(accounts, visible=true) {
+export function generateAccountsDOM(accounts, visible = true) {
   if (Array.isArray(accounts) && accounts.length !== 0) {
     return (
       <AcccountList visible={visible}>
-        {accounts.map(singleAccount => <AccountDisplay key={singleAccount.name} account={singleAccount} />)}
+        {accounts.map(singleAccount => <AccountSelector key={singleAccount.name} account={singleAccount} />)}
       </AcccountList>
     );
   } else {
@@ -53,7 +48,7 @@ function generateAccountsDOM(accounts, visible=true) {
   }
 }
 
-class AccountDisplay extends React.Component {
+class AccountSelector extends React.Component {
   constructor(props) {
     if (!(props && props.account && props.account.name && Array.isArray(props.account.subAccounts))) {
       throw new SyntaxError("props.account is invalid");
@@ -73,29 +68,15 @@ class AccountDisplay extends React.Component {
   }
 
   render() {
-    if (this.hasSubAccounts) {
-      return (
-        <li>
-          <Checkbox type="checkbox" checked={this.state.subAccountsVisible} onChange={e => this.toggleSubaccountVisibility(e)}/>
-          {this.props.account.name}
-          {generateAccountsDOM(this.props.account.subAccounts, this.state.subAccountsVisible)}
-        </li>
-      );
-    } else {
-      return (
-        <li>
-          <Checkbox type="checkbox" style={{visibility: "hidden"}} />{/* This is for alignment only */}
-          {this.props.account.name}
-        </li>
-      );
-    }
+    const TreeHandleStyle = (this.hasSubAccounts ? {} : { visibility: "hidden" }); // if it's hidden, it to help alignment
+    return (
+      <li>
+        <TreeExpandHandle type="checkbox" checked={this.state.subAccountsVisible} style={TreeHandleStyle} onChange={e => this.toggleSubaccountVisibility(e)} />
+        {this.props.account.name}
+        {this.hasSubAccounts ? generateAccountsDOM(this.props.account.subAccounts, this.state.subAccountsVisible) : null}
+      </li>
+    );
   }
 }
 
-export default function AccountPane(props) {
-  return (
-    <AccountArea>
-      {generateAccountsDOM(props.accounts)}
-    </AccountArea>
-  );
-}
+

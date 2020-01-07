@@ -2,8 +2,7 @@ import Header from "../../components/Header";
 import styled from "styled-components";
 import { theme } from "../../lib/constants/stylingParts";
 import AppGrid from "../../components/AppGrid";
-import SideBar, { InformationArea } from "../../components/SideBar";
-import AccountPane from "../../components/AccountPane";
+import SideBar, { InformationArea, AccountPane } from "../../components/SideBar";
 import { exampleTableBodyObject, exampleAccountData } from "../../lib/constants/exampleData";
 import EditableTable from "../../components/EditableTable";
 
