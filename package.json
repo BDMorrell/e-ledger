@@ -2,9 +2,8 @@
   "name": "e-ledger",
   "version": "1.0.0",
   "description": "Checkbook/Ledger app",
-  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn run next build"
   },
   "repository": {
     "type": "git",
